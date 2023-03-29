@@ -14,23 +14,13 @@ let days = [
 
 const uhrZeit = () => {
     const timeNow = new Date()
-    theday = days[timeNow.getDay()],
+    theday = days[timeNow.getDay()].substring(0,3),
     hours = timeNow.getHours(),
     minutes = timeNow.getMinutes(),
     seconds = timeNow.getSeconds();
-    console.log(timeNow);
-
+    // console.log(timeNow);
 };
+
 uhrZeit ()
-document.getElementById('uhr').innerHTML = theday + hours + ':' + minutes + ':' + seconds;
-
-
-
-// function uhrzeit() {
-//     var jetzt = new Date(),
-//         h = jetzt.getHours(),
-//         m = jetzt.getMinutes(),
-//         s = jetzt.getSeconds();
-//     document.getElementById('uhr').innerHTML = h + ':' + m + ':' + s;
-//   }
-//   uhrzeit()
+document.getElementById('watch').innerHTML = `${theday} ${hours}:${minutes}:${seconds}`
+document.getElementById('subline').innerHTML += `Days Hours Minutes Seconds`
